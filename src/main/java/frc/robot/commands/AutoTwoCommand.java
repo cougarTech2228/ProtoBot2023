@@ -5,6 +5,7 @@ import java.util.HashMap;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
@@ -39,10 +40,11 @@ public class AutoTwoCommand extends SequentialCommandGroup {
                 new FollowTrajectoryCommand(RobotContainer.getDrivetrainSubsystem(), m_outPathFileName,
                         m_eventMap,
                         Constants.MAX_AUTO_VELOCITY, Constants.MAX_AUTO_ACCELERATION, true),
-                new FollowTrajectoryCommand(RobotContainer.getDrivetrainSubsystem(), "auto2_back",
-                        m_eventMap,
-                        Constants.MAX_AUTO_VELOCITY, Constants.MAX_AUTO_ACCELERATION, true),
-                        new InstantCommand(() -> RobotContainer.getDrivetrainSubsystem().reverseGyroscope()),
+                new PrintCommand("Starting Balance"),
+                new BalanceCommand(RobotContainer.getDrivetrainSubsystem()),
+                new PrintCommand("Finished Balance"),
+                // new DriveFwdRevCommand(10, 0.2, RobotContainer.getDrivetrainSubsystem()),
+                new InstantCommand(() -> RobotContainer.getDrivetrainSubsystem().reverseGyroscope()),
                 new InstantCommand(() -> printEndCommand()));
     }
 

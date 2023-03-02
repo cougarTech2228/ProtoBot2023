@@ -29,7 +29,7 @@ public class OutPathFileNameChooser {
                 if (m_autoPosition == Constants.AutoPosition.Position1) {
                     m_outPathFileName = "auto1L_out";
                 } else if (m_autoPosition == Constants.AutoPosition.Position2) {
-                    m_outPathFileName = "auto2L_out";
+                    m_outPathFileName = "ChargingStation";
                 } else if (m_autoPosition == Constants.AutoPosition.Position3) {
                     m_outPathFileName = "auto3L_out";
                 } else {
@@ -40,7 +40,7 @@ public class OutPathFileNameChooser {
                 if (m_autoPosition == Constants.AutoPosition.Position1) {
                     m_outPathFileName = "auto1R_out";
                 } else if (m_autoPosition == Constants.AutoPosition.Position2) {
-                    m_outPathFileName = "auto2R_out";
+                    m_outPathFileName = "ChargingStation";
                 } else if (m_autoPosition == Constants.AutoPosition.Position3) {
                     m_outPathFileName = "auto3R_out";
                 } else {
@@ -51,7 +51,7 @@ public class OutPathFileNameChooser {
             if (m_autoPosition == Constants.AutoPosition.Position1) {
                 m_outPathFileName = "autoM_out";
             } else if (m_autoPosition == Constants.AutoPosition.Position2) {
-                m_outPathFileName = "auto2M_out";
+                m_outPathFileName = "ChargingStation";
             } else if (m_autoPosition == Constants.AutoPosition.Position3) {
                 m_outPathFileName = "auto3M_out";
             } else {
